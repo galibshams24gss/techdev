@@ -20,11 +20,11 @@
     class="elevation-1"
   >
     <template v-slot:top>
-        <v-dialog v-model="dialog" max-width="600px">
+        <v-dialog v-model="dialog" max-width="800px">
           <v-card
           :loading="loading"
           class="mx-auto my-12"
-          max-width="600"
+          max-width="800"
           id="dataholder"
         >
     <v-img
@@ -74,7 +74,7 @@
               <div class="align-center">
                 <v-chip color="#006064">{{viewedItem.SeatOne}}</v-chip>
                 &nbsp;
-                <v-chip color="#FFAB00">{{viewedItem.SeatTwo}}</v-chip>
+                <v-chip color="#03A9F4">{{viewedItem.SeatTwo}}</v-chip>
               </div>
             </v-card-subtitle>
           </v-card>
@@ -95,7 +95,7 @@
   </v-card>
         </v-dialog>
     </template>
-    <template v-slot:item.actions="{ item }">
+    <template v-slot:item.action="{ item }">
        <div class="text-center">
         <v-btn rounded color="lime accent-4" dark @click="viewItem(item)">Event Details</v-btn>
       </div>
@@ -126,7 +126,7 @@
           value: 'Title',
         },
         { text: 'Time', align: 'center', value: 'Time' },
-        { text: 'Actions', align: 'center', value: 'actions', sortable: false },
+        { text: 'Action', align: 'center', value: 'action', sortable: false },
       ],
       viewedIndex: -1,
       viewedItem: {
